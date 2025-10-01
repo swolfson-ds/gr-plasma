@@ -14,10 +14,11 @@ namespace gr {
 
     using output_type = float;
     pdu_to_stream::sptr
-    pdu_to_stream::make()
+    pdu_to_stream::make(bool repeat)
     {
       return gnuradio::make_block_sptr<pdu_to_stream_impl>(
-        );
+        repeat
+      );
     }
 
 
