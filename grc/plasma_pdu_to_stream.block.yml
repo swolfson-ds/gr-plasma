@@ -21,7 +21,7 @@ parameters:
   option_labels: ['Yes', 'No']
 
 inputs:
-- label: pdu_in
+- label: pdus
   domain: message
   id: pdus
   optional: false
