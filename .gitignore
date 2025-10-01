@@ -1,5 +1,6 @@
 # python cruft
 *.pyc
+
 # Prerequisites
 *.d
 
