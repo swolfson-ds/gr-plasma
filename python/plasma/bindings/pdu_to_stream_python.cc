@@ -13,8 +13,8 @@
 /* If manual edits are made, the following tags should be modified accordingly.    */
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
-/* BINDTOOL_HEADER_FILE(pdu_to_stream.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(3df0008c246519f5451371a29dc75472)                     */
+/* BINDTOOL_HEADER_FILE(pdu_to_stream.h)                                           */
+/* BINDTOOL_HEADER_FILE_HASH(0)                                                    */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -29,33 +29,16 @@ namespace py = pybind11;
 
 void bind_pdu_to_stream(py::module& m)
 {
-
-    using pdu_to_stream    = gr::plasma::pdu_to_stream;
-
+    using pdu_to_stream = ::gr::plasma::pdu_to_stream;
 
     py::class_<pdu_to_stream, gr::sync_block, gr::block, gr::basic_block,
         std::shared_ptr<pdu_to_stream>>(m, "pdu_to_stream", D(pdu_to_stream))
 
         .def(py::init(&pdu_to_stream::make),
-            py::arg("repeat") = true,           
-            D(pdu_to_stream,make)
-
+           py::arg("repeat") = true,
+           D(pdu_to_stream,make)
         )
-        
-
-
-
         ;
-
-
-
-
 }
-
-
-
-
-
-
 
 
