@@ -9,6 +9,9 @@
 #define INCLUDED_PLASMA_PDU_TO_STREAM_IMPL_H
 
 #include <gnuradio/plasma/pdu_to_stream.h>
+#include <vector>
+#include <mutex>
+
 
 namespace gr {
   namespace plasma {
@@ -16,10 +19,15 @@ namespace gr {
     class pdu_to_stream_impl : public pdu_to_stream
     {
      private:
-      // Nothing to declare in this block.
+      std::vector<gr_complex> d_waveform;
+      size_t d_sample_index;
+      std::mutex d_mutex;
+      bool d_repeat;
+
+      void handle_pdu(pmt::pmt_t msg);
 
      public:
-      pdu_to_stream_impl();
+      pdu_to_stream_impl(bool repeat=true);
       ~pdu_to_stream_impl();
 
       // Where all the action really happens
