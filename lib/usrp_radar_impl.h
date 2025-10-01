@@ -18,7 +18,7 @@
 #include <boost/thread/thread.hpp>
 #include <fstream>
 #include <queue>
-
+#include <thread>
 
 namespace gr {
 namespace plasma {
