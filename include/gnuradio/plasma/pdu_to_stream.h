@@ -32,7 +32,7 @@ namespace gr {
        * class. plasma::pdu_to_stream::make is the public interface for
        * creating new instances.
        */
-      static sptr make();
+      static sptr make(bool repeat = true);
     };
 
   } // namespace plasma

@@ -37,7 +37,9 @@ void bind_pdu_to_stream(py::module& m)
         std::shared_ptr<pdu_to_stream>>(m, "pdu_to_stream", D(pdu_to_stream))
 
         .def(py::init(&pdu_to_stream::make),
-           D(pdu_to_stream,make)
+            py::arg("repeat") = true,           
+            D(pdu_to_stream,make)
+
         )
         
 
